@@ -52,7 +52,12 @@
 }
 /* .input :hover {
   border: 2px #367aff solid;
-} */
+}
+   */
+.error{
+  color: rgb(165, 31, 31);
+  font-size: 10px;
+}
 .input input {
   border: none;
 }

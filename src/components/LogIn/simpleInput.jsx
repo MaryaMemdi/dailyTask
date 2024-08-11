@@ -1,4 +1,5 @@
-const SimpleInput = ({ type, placeHolder, value, name, lableText }) => {
+const SimpleInput = ({ type, placeHolder, value, name, lableText,handleChange }) => {
+  
   return (
     <>
       <label className="text-black font-medium ">
@@ -8,6 +9,7 @@ const SimpleInput = ({ type, placeHolder, value, name, lableText }) => {
           placeholder={placeHolder}
           value={value}
           name={name}
+          onChange={handleChange}
         />
         {lableText}
       </label>
