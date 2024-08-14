@@ -2,12 +2,17 @@ import { ToastContainer } from "react-toastify";
 import LeftPanel from "../components/leftPanel";
 import RightPanel from "../components/rightPanel";
 import useFormValidation from "../hooks/useFormValidation";
+import { NavLink } from "react-router-dom";
 
+import { ImHome } from "react-icons/im";
 const Login = () => {
-  const { values, errors, handleChange, handleSubmit } = useFormValidation();
+  const { values, errors, handleChange, handleSubmit, isValid } = useFormValidation();
   return (
     <div className="flex w-full flex-row  h-screen">
       <div className="flex flex-col w-full h-screen md:w-1/2">
+        <NavLink to="/">
+          <ImHome />
+        </NavLink>
         <RightPanel
           title="ورود"
           handleChange={handleChange}
@@ -15,9 +20,14 @@ const Login = () => {
           value={values}
           errors={errors}
           buttonTitle="ورود"
+          inputClass={inputClass}
+          isValid={isValid}
         />
-        <a className="flex flex-row p-3
-        text-left mb-10 justify-end font-shabnam text-gray-700" href="#" >
+        <a
+          className="flex flex-row p-3
+        text-left mb-10 justify-end font-shabnam text-gray-700"
+          href="#"
+        >
           رمز عبور خود را فراموش کردید؟
         </a>
       </div>
@@ -25,8 +35,9 @@ const Login = () => {
         title="سلام دوست خوبم"
         label="عضویت"
         description="وارد حساب کاربری خود شوید و با ما به کشف جهان بپردازید"
+        adress="/register"
       />
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 };

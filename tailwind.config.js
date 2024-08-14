@@ -7,8 +7,11 @@ export default {
         vazir: ["Vazir"],
         shabnam: ["Shabnam"],
       },
+      borderColor: {
+        success: "green",
+        error: "red",
+      },
     },
   },
   plugins: [],
- 
 };
