@@ -6,7 +6,8 @@ import { NavLink } from "react-router-dom";
 
 import { ImHome } from "react-icons/im";
 const Login = () => {
-  const { values, errors, handleChange, handleSubmit, isValid } = useFormValidation();
+  const { values, errors, handleChange, handleSubmit, } =
+    useFormValidation();
   return (
     <div className="flex w-full flex-row  h-screen">
       <div className="flex flex-col w-full h-screen md:w-1/2">
@@ -20,8 +21,7 @@ const Login = () => {
           value={values}
           errors={errors}
           buttonTitle="ورود"
-          inputClass={inputClass}
-          isValid={isValid}
+          
         />
         <a
           className="flex flex-row p-3

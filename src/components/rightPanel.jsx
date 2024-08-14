@@ -7,7 +7,7 @@ const RightPanel = ({
   handleChange,
   value,
   errors,
-  isValid
+ 
 }) => {
   const inputs = [
     { label: "نام ", name: "firstName", type: "text" },
@@ -30,8 +30,7 @@ const RightPanel = ({
             value={value[input.name]}
             onChange={handleChange}
             errors={errors[input.name]}
-            id={input.name}
-            isValid={isValid}
+            
           />
         ))}
         <button className=" flex bg-blue-600 text-white rounded-lg w-auto px-5 py-2   m-auto font-shabnam text-center">

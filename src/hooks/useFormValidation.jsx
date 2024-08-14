@@ -14,13 +14,7 @@ const useFormValidation = () => {
   });
   // Initialize state for validation errors
   const [errors, setErrors] = useState({});
-  const [inputClass, setInputClass] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-  });
-  const [isValid, setIsValid] = useState(false);
+ 
   //regex
   const firstNameRegex = /^[a-zA-Z]+$/;
   const lastNameRegex = /^[a-zA-Z]+$/;
@@ -32,6 +26,7 @@ const useFormValidation = () => {
   const validate = () => {
     // Create an empty object to store errors
     let errors = {};
+    
     // Check for empty first name
     if (!values.firstName.trim()) {
       errors.firstName = "وارد کردن نام الزامی است";
@@ -43,9 +38,7 @@ const useFormValidation = () => {
       errors.lastName = "وارد کردن نام خانوادگی الزامی است";
     } else if (!lastNameRegex.test(values.lastName)) {
       errors.lastName = "نام خانوادگی باید به حروف انگلیسی باشد";
-    } else {
-      setIsValid(true);
-    }
+    } 
     // Check for empty email
     if (!values.email.trim()) {
       errors.email = "وارد کردن ایمیل الزامی است";
@@ -92,6 +85,6 @@ const useFormValidation = () => {
     }
   };
   // Return form state, errors, and event handlers
-  return { values, errors, handleChange, handleSubmit, inputClass, isValid };
+  return { values, errors, handleChange, handleSubmit };
 };
 export default useFormValidation;
