@@ -25,6 +25,7 @@ const Login = () => {
             { label: "ایمیل", name: "email", type: "email" },
             { label: "رمز عبور", name: "password", type: "password" }]}
           
+          
         />
         <a
           className="flex flex-row p-3

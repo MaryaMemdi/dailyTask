@@ -1,7 +1,7 @@
 // Validates user input for first name, last name, email, and password.
 // Returns an object containing any validation errors.
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const useFormValidation = () => {
@@ -14,31 +14,35 @@ const useFormValidation = () => {
   });
   // Initialize state for validation errors
   const [errors, setErrors] = useState({});
- 
+
   //regex
   const firstNameRegex = /^[a-zA-Z]+$/;
   const lastNameRegex = /^[a-zA-Z]+$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const passwordRegex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
 
   // Function to perform form validation
   const validate = () => {
     // Create an empty object to store errors
     let errors = {};
-    
+
     // Check for empty first name
     if (!values.firstName.trim()) {
       errors.firstName = "وارد کردن نام الزامی است";
     } else if (!firstNameRegex.test(values.firstName)) {
       errors.firstName = "نام باید به حروف انگلیسی باشد";
+    } else {
+      errors.firstName = "";
     }
     // Check for empty last name
     if (!values.lastName.trim()) {
       errors.lastName = "وارد کردن نام خانوادگی الزامی است";
     } else if (!lastNameRegex.test(values.lastName)) {
       errors.lastName = "نام خانوادگی باید به حروف انگلیسی باشد";
-    } 
+    } else {
+      errors.lastName = "";
+    }
     // Check for empty email
     if (!values.email.trim()) {
       errors.email = "وارد کردن ایمیل الزامی است";
@@ -47,6 +51,8 @@ const useFormValidation = () => {
     // Check for valid email format
     else if (!emailRegex.test(values.email)) {
       errors.email = "ایمیل نامعتبر است";
+    } else {
+      errors.email = "";
     }
 
     // Check for empty password
@@ -58,6 +64,8 @@ const useFormValidation = () => {
       errors.password = "رمز عبور باید حداقل شامل 6 حرف باشد";
     } else if (!passwordRegex.test(values.password)) {
       errors.password = "رمزعبور باید شامل حرف بزرگ،کوچک و علائم باشد";
+    } else {
+      errors.password = "";
     }
     // Return the object containing any validation errors
     return errors;
