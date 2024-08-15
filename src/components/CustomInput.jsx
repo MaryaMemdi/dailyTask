@@ -22,7 +22,7 @@ const CustomInput = ({ type, value, name, lable, onChange, errors }) => {
         className={`w-full p-2  border-2 border-solid rounded-xl border-gray-800  ${
           errors ? "border-red-600" : ""
         }${isValid ? "border-green-600" : ""}${
-          passwordLength > 6 ? "border-green-700" : ""
+          passwordLength < 6 ? "border-gray-700" : "border-green-700"
         }
         hover:border-blue-700 forced-colors:none `}
         type={type}
@@ -37,4 +37,3 @@ const CustomInput = ({ type, value, name, lable, onChange, errors }) => {
 };
 
 export default CustomInput;
-
