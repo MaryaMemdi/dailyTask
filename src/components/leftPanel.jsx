@@ -11,7 +11,7 @@ const LeftPanel = ({ title, description, label, adress }) => {
       <NavLink
         to={adress}
         className="flex text-white rounded-full w-auto px-5 py-2 border-2 border-solid border-white m-auto font-shabnam text-center"
-        onClick={handleClick}
+       
       >
         {label}
       </NavLink>

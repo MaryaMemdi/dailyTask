@@ -37,6 +37,4 @@ const CustomInput = ({ type, value, name, lable, onChange, errors }) => {
 };
 
 export default CustomInput;
-// problem with change border color for password and other
-//you use not Isvalid
-//please morgen try harder
+

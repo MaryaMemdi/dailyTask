@@ -26,7 +26,7 @@ const Register = () => {
         buttonTitle="عضویت"
         value={values}
         errors={errors}
-        inputClass={inputClass}
+        
         fields={[
           { label: "نام ", name: "firstName", type: "text" },
           { label: "نام خانوادگی", name: "lastName", type: "text" },

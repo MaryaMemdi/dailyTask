@@ -8,7 +8,7 @@ const RightPanel = ({
   value,
   errors,
   fields,
-  valid,
+  
 }) => {
   const inputs = [...fields];
 
