@@ -5,7 +5,6 @@ import useFormValidation from "../hooks/useFormValidation";
 import { NavLink } from "react-router-dom";
 import { ImHome } from "react-icons/im";
 
-
 const Register = () => {
   const { values, errors, handleChange, handleSubmit } = useFormValidation();
   return (
@@ -18,6 +17,7 @@ const Register = () => {
         description="برای برقراری ارتباط با ما لطفا حساب کاربری خود را ایجاد کنید
         "
         label="ورود"
+        adress="/login"
       />
       <RightPanel
         title="ایجاد حساب"
@@ -26,7 +26,6 @@ const Register = () => {
         buttonTitle="عضویت"
         value={values}
         errors={errors}
-        
         fields={[
           { label: "نام ", name: "firstName", type: "text" },
           { label: "نام خانوادگی", name: "lastName", type: "text" },
