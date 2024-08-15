@@ -1,24 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // for genral use of all inputs
 const CustomInput = ({ type, value, name, lable, onChange, errors }) => {
-  // const [inputValue, setInputValue] = useState("");
-  // const [valid, setvalid] = useState(false);
-  // const handleInputChange = (event) => {
-  //   setInputValue(event.target.value);
-  //   setvalid(false);
-  // };
-  // const handleBlur = () => {
-  //   if (valid) {
-  //     setvalid(true);
-  //   }
-  // };
-  // let borderColor = "border-gray-300";
-  // if (!valid) {
-  //   borderColor = "border-red-500";
-  // } else {
-  //   borderColor = "border-green-500";
-  // }
   return (
     <div className="p-2 w-full">
       <input
@@ -31,7 +14,6 @@ const CustomInput = ({ type, value, name, lable, onChange, errors }) => {
         value={value}
         name={name}
         onChange={onChange}
-        
       />
       {errors && <p className="text-red-500 text-sm">{errors}</p>}
     </div>

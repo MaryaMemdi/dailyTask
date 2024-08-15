@@ -5,7 +5,8 @@ import useFormValidation from "../hooks/useFormValidation";
 import { NavLink } from "react-router-dom";
 import { ImHome } from "react-icons/im";
 const Register = () => {
-  const { values, errors,inputClass, handleChange, handleSubmit } = useFormValidation();
+  const { values, errors, inputClass, handleChange, handleSubmit } =
+    useFormValidation();
   return (
     <div className="flex flex-row m-auto content-center w-full h-screen">
       <NavLink to="/">
@@ -26,6 +27,12 @@ const Register = () => {
         value={values}
         errors={errors}
         inputClass={inputClass}
+        fields={[
+          { label: "نام ", name: "firstName", type: "text" },
+          { label: "نام خانوادگی", name: "lastName", type: "text" },
+          { label: "ایمیل", name: "email", type: "email" },
+          { label: "رمز عبور", name: "password", type: "password" },
+        ]}
       />
       <ToastContainer />
     </div>

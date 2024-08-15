@@ -7,14 +7,9 @@ const RightPanel = ({
   handleChange,
   value,
   errors,
- 
+  fields,
 }) => {
-  const inputs = [
-    { label: "نام ", name: "firstName", type: "text" },
-    { label: "نام خانوادگی", name: "lastName", type: "text" },
-    { label: "ایمیل", name: "email", type: "email" },
-    { label: "رمز عبور", name: "password", type: "password" },
-  ];
+  const inputs = [ ...fields ];
 
   return (
     <div className="w-full md:w-1/2 p-5 m-auto flex flex-col justify-center text-black content-center h-screen">
@@ -30,7 +25,6 @@ const RightPanel = ({
             value={value[input.name]}
             onChange={handleChange}
             errors={errors[input.name]}
-            
           />
         ))}
         <button className=" flex bg-blue-600 text-white rounded-lg w-auto px-5 py-2   m-auto font-shabnam text-center">

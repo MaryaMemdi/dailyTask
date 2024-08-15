@@ -21,6 +21,9 @@ const Login = () => {
           value={values}
           errors={errors}
           buttonTitle="ورود"
+          fields={[
+            { label: "ایمیل", name: "email", type: "email" },
+            { label: "رمز عبور", name: "password", type: "password" }]}
           
         />
         <a
@@ -43,3 +46,5 @@ const Login = () => {
 };
 
 export default Login;
+
+//how can i filter input 
