@@ -1,20 +1,30 @@
-// for genral use of all inputs
-const CustomInput = ({
-  type,
+import { useEffect, useState } from "react";
 
-  value,
-  name,
-  lable,
-  onChange,
-  errors,
-}) => {
+// for genral use of all inputs
+const CustomInput = ({ type, value, name, lable, onChange, errors }) => {
+  const [isValid, setIsValid] = useState(false);
+  const [passwordLength, setPasswordLength] = useState(0);
+  useEffect(() => {
+    if (type === "password") {
+      setPasswordLength(value.length);
+    }
+  }, [value, type]);
+  useEffect(() => {
+    if (errors === "") {
+      setIsValid(true);
+    } else {
+      setIsValid(false);
+    }
+  }, [errors]);
   return (
     <div className="p-2 w-full">
       <input
-        className={`w-full p-2  border-2 border-solid rounded-xl ${
-          errors ? "border-red-500" : "border-gray-700"
-        } 
-        hover:border-blue-700 `}
+        className={`w-full p-2  border-2 border-solid rounded-xl border-gray-800  ${
+          errors ? "border-red-600" : ""
+        }${isValid ? "border-green-600" : ""}${
+          passwordLength > 6 ? "border-green-700" : ""
+        }
+        hover:border-blue-700 forced-colors:none `}
         type={type}
         placeholder={lable}
         value={value}
@@ -27,3 +37,6 @@ const CustomInput = ({
 };
 
 export default CustomInput;
+// problem with change border color for password and other
+//you use not Isvalid
+//please morgen try harder

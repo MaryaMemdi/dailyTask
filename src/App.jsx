@@ -1,12 +1,19 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/login";
+
 import Register from "./pages/register";
-import Screen from "./pages/screen";
+import Home from "./pages/home";
 
 const App = () => {
   return (
-    <div>
-      <Screen />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 export default App;
