@@ -8,7 +8,6 @@ const RightPanel = ({
   value,
   errors,
   fields,
-  
 }) => {
   const inputs = [...fields];
 
@@ -22,14 +21,16 @@ const RightPanel = ({
             key={input.name}
             name={input.name}
             type={input.type}
-            lable={input.label}
+            label={input.label}
             value={value[input.name]}
             onChange={handleChange}
             errors={errors[input.name]}
-            
           />
         ))}
-        <button className=" flex bg-blue-600 text-white rounded-lg w-auto px-5 py-2   m-auto font-shabnam text-center">
+        <button
+          className=" flex bg-blue-600 text-white rounded-lg w-auto px-5 py-2   m-auto font-shabnam text-center"
+          type="submit"
+        >
           {buttonTitle}
         </button>
       </form>

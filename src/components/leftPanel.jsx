@@ -7,12 +7,6 @@ const LeftPanel = ({ title, description, label, adress }) => {
         {title}
       </h1>
       <p className="mb-10 text-xl text-center font-shabnam">{description}</p>
-      <NavLink
-        to={adress}
-        className="flex text-white rounded-full w-auto px-5 py-2 border-2 border-solid border-white m-auto font-shabnam text-center"
-      >
-        {label}
-      </NavLink>
     </div>
   );
 };

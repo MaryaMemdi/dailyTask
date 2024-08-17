@@ -7,9 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 const useFormValidation = () => {
   //Initialize form state with empty values
   const [values, setValues] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
+    userName: "",
     password: "",
   });
   // Initialize state for validation errors
