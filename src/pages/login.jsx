@@ -33,7 +33,7 @@ const Login = () => {
           رمز عبور خود را فراموش کردید؟
         </a>
       </div>
-      <div className="order-1 w-full h-screen sm:order-2 ">
+      <div className="order-1 w-full h-screen sm:order-2 md:w-1/2">
         <LeftPanel
           title="سلام دوست خوبم"
           label="عضویت"
