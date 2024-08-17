@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 // for genral use of all inputs
 const CustomInput = ({ type, value, name, label, onChange, errors }) => {
+  // Changing the color of the box after confirmation
   const [isValid, setIsValid] = useState(false);
 
   useEffect(() => {

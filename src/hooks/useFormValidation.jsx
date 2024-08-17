@@ -1,7 +1,7 @@
 // Validates user input for first name, last name, email, and password.
 // Returns an object containing any validation errors.
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const useFormValidation = () => {
@@ -14,9 +14,7 @@ const useFormValidation = () => {
   const [errors, setErrors] = useState({});
 
   //regex
-  const firstNameRegex = /^[a-zA-Z]+$/;
-  const lastNameRegex = /^[a-zA-Z]+$/;
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const userNameRegex = /^[A-z0-9\-]+$/;
   const passwordRegex =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
 
@@ -25,34 +23,14 @@ const useFormValidation = () => {
     // Create an empty object to store errors
     let errors = {};
 
-    // Check for empty first name
-    if (!values.firstName.trim()) {
-      errors.firstName = "وارد کردن نام الزامی است";
-    } else if (!firstNameRegex.test(values.firstName)) {
-      errors.firstName = "نام باید به حروف انگلیسی باشد";
+    //check for empty username
+    if (!values.userName.trim()) {
+      errors.userName = "وارد کردن نام کاربری الزامی است";
+    } else if (!userNameRegex.test(values.userName)) {
+      errors.userName = "نام کاربری نامعتبر است";
     } else {
-      errors.firstName = "";
+      errors.userName = "";
     }
-    // Check for empty last name
-    if (!values.lastName.trim()) {
-      errors.lastName = "وارد کردن نام خانوادگی الزامی است";
-    } else if (!lastNameRegex.test(values.lastName)) {
-      errors.lastName = "نام خانوادگی باید به حروف انگلیسی باشد";
-    } else {
-      errors.lastName = "";
-    }
-    // Check for empty email
-    if (!values.email.trim()) {
-      errors.email = "وارد کردن ایمیل الزامی است";
-    }
-
-    // Check for valid email format
-    else if (!emailRegex.test(values.email)) {
-      errors.email = "ایمیل نامعتبر است";
-    } else {
-      errors.email = "";
-    }
-
     // Check for empty password
     if (!values.password.trim()) {
       errors.password = "وارد کردن رمز عبور الزامی است";
@@ -84,7 +62,11 @@ const useFormValidation = () => {
     setErrors(ValidationErrors);
 
     // Show error toast notification
-    if (Object.keys(ValidationErrors).length === 0) {
+    if (
+      Object.keys(ValidationErrors).length === 0 ||
+      errors.password === "" ||
+      errors.userName === ""
+    ) {
       toast.success("فرم با موفقیت ارسال شد");
     } else {
       toast.error("لطفا فرم را کامل پر کنید");
