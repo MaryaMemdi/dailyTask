@@ -6,11 +6,10 @@ import { NavLink } from "react-router-dom";
 
 import { ImHome } from "react-icons/im";
 const Login = () => {
-  const { values, errors, handleChange, handleSubmit, } =
-    useFormValidation();
+  const { values, errors, handleChange, handleSubmit } = useFormValidation();
   return (
-    <div className="flex w-full flex-row  h-screen">
-      <div className="flex flex-col w-full h-screen md:w-1/2">
+    <div className="flex w-full flex-col  h-screen   sm:flex-row">
+      <div className="flex flex-col w-full h-screen md:w-1/2 order-2 sm:order-1">
         <NavLink to="/">
           <ImHome />
         </NavLink>
@@ -23,9 +22,8 @@ const Login = () => {
           buttonTitle="ورود"
           fields={[
             { label: "ایمیل", name: "email", type: "email" },
-            { label: "رمز عبور", name: "password", type: "password" }]}
-          
-          
+            { label: "رمز عبور", name: "password", type: "password" },
+          ]}
         />
         <a
           className="flex flex-row p-3
@@ -35,12 +33,14 @@ const Login = () => {
           رمز عبور خود را فراموش کردید؟
         </a>
       </div>
-      <LeftPanel
-        title="سلام دوست خوبم"
-        label="عضویت"
-        description="وارد حساب کاربری خود شوید و با ما به کشف جهان بپردازید"
-        adress="/register"
-      />
+      <div className="order-1 w-full h-screen sm:order-2 ">
+        <LeftPanel
+          title="سلام دوست خوبم"
+          label="عضویت"
+          description="وارد حساب کاربری خود شوید و با ما به کشف جهان بپردازید"
+          adress="/register"
+        />
+      </div>
       <ToastContainer />
     </div>
   );
@@ -48,4 +48,4 @@ const Login = () => {
 
 export default Login;
 
-//how can i filter input 
+//how can i filter input

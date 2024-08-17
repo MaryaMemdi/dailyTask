@@ -8,17 +8,20 @@ import { ImHome } from "react-icons/im";
 const Register = () => {
   const { values, errors, handleChange, handleSubmit } = useFormValidation();
   return (
-    <div className="flex flex-row m-auto content-center w-full h-screen">
-      <NavLink to="/">
-        <ImHome />
-      </NavLink>
-      <LeftPanel
-        title="خوش آمدید"
-        description="برای برقراری ارتباط با ما لطفا حساب کاربری خود را ایجاد کنید
+    <div className="flex flex-col  w-full h-screen sm:flex-row ">
+      
+        <NavLink to="/">
+          <ImHome />
+        </NavLink>
+        <LeftPanel
+          title="خوش آمدید"
+          description="برای برقراری ارتباط با ما لطفا حساب کاربری خود را ایجاد کنید
         "
-        label="ورود"
-        adress="/login"
-      />
+          label="ورود"
+          adress="/login"
+         
+        />
+      
       <RightPanel
         title="ایجاد حساب"
         handleSubmit={handleSubmit}
